@@ -1,0 +1,32 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+
+<div data-controller="hello">
+  <input data-hello-target="name" type="text">
+  <button data-action="click->hello#greet">Greet</button>
+  <span data-hello-target="output"></span>
+</div>
+<br/>
+
+<div data-controller="ashish" data-ashish-number-value=6>
+  <span data-ashish-target="output" class="fs-2"></span>
+  <br>
+  <button data-action="click->ashish#increment">Click me</button>
+</div>
+
+<div data-controller="text-input">
+  <input type="text" data-action="text-input#changed" data-text-input-target="input">
+  <h1 data-text-input-target="output"></h1>
+</div>
+
+<h2>Slideshow Example</h2>
+<div data-controller="slideshow" data-slideshow-index-value="0">
+  <button data-action="slideshow#previous"> ← </button>
+  <button data-action="slideshow#next"> → </button>
+
+  <div data-slideshow-target="slide">🐵</div>
+  <div data-slideshow-target="slide">🙈</div>
+  <div data-slideshow-target="slide">🙉</div>
+  <div data-slideshow-target="slide">🙊</div>
+</div>

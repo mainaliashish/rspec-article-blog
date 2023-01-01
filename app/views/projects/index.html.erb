@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <%= turbo_stream_from 'projects' %>
+    <div class="col-md-6">
+      <%= turbo_frame_tag 'project_form' do %>
+        <%= render 'projects/form', project: @project %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <h2>Projects List</h2>
+      <hr/>
+      <%= turbo_frame_tag 'projects' do %>
+        <%= render @projects %>
+      <% end %>
+    </div>
+  </div>  
+</div>
+
+

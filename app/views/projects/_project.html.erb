@@ -1,0 +1,10 @@
+<%= turbo_frame_tag dom_id(project) do %>
+  <p class="fw-bold">Project Title : <%= project.title %></p>
+  <p class="fw-bold">Project Content : <%= project.content %></p>
+  <p class="fw-bold"><%= link_to 'Vote', vote_project_path(project), class:"btn btn-success btn-sm" %>
+  </p>
+  <p><span class="fs-1"><%= project.vote %></span></p>
+  <%= link_to "Edit", edit_project_path(project), class: "btn btn-primary btn-sm" %>
+  <%= link_to "Delete", project_path(project), data: { turbo_method: :delete }, class: "btn btn-danger btn-sm" %>
+  <hr/>
+<% end %>

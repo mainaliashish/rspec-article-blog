@@ -1,0 +1,5 @@
+<%= turbo_frame_tag dom_id(@project) do %>
+  <%= render 'form', project: @project %>
+  <%= link_to 'Cancel', @project %>
+  <br>
+<% end %>

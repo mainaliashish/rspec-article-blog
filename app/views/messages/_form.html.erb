@@ -1,0 +1,23 @@
+<%= form_with(model: message) do |form| %>
+  <% if message.errors.any? %>
+    <div style="color: red">
+      <p><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</p>
+
+      <ul>
+        <% message.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_field :body %>
+  </div>
+
+  <div>
+    <%= form.submit class: "btn btn-primary btn-sm mt-4"%>
+  </div>
+  <br>
+<% end %>

@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @article %>
+
+<div>
+  <%= link_to "Edit this article", edit_article_path(@article) %> |
+  <%= link_to "Back to articles", articles_path %> |
+
+  <%= link_to "Destroy this article", @article, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+</div>
+
+<%= turbo_frame_tag "comments_form" do %>
+  <%= render 'comments/form', comment: @comments %>
+<% end %>
+
+<%= turbo_stream_from "comments" %>
+
+<%= turbo_frame_tag "comments" do %>
+  <%= render @comments %>
+<% end %>
